@@ -1,6 +1,6 @@
 /*
-Nome: Franklyn Seabra Rogério Bezerra
-Matricula: 397847   Curso: Ciências da computação, UFC
+Franklyn Seabra Rogério Bezerra 397847
+Este foi feito inicialmente por ele e recebeu acréscimos meus ;)
 */
 class Conjunto{
 
