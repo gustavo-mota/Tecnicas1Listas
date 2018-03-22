@@ -3,8 +3,8 @@ Franklyn Seabra Rogério Bezerra 397847
 Este foi feito inicialmente por ele e recebeu acréscimos meus ;)
 */
 class Conjunto{
-
-	int tamanho;
+	int ultimo = 0; //indice do atual ultimo elemento do conjunto
+	int tamanho;//tamanho do conjunto
 	int[] array;
 
 	Conjunto(int t){
@@ -12,33 +12,31 @@ class Conjunto{
 		array = new int[t];
 	}
 
-	public Conjunto getTamanho(){
+	public int getTamanho(){
 		return this.tamanho;
 	}
 
-	public Conjunto getElemento(int indice){
-		return this.array[indice];
+	public int getElemento(int indice){
+		return this.array[indice];   
 	}
 
 	public void adicionar(int e){ //elemento
-		if (elementoPertence(e)){
-			return;
-		}
-		int k = 0;
-		for (int i = 0; i < this.tamanho; i++){
-			if (this.array[i] != -1)
-				k++;
-		}
-		if(k == this.tamanho){
-			System.out.println("Conjunto cheio!");
+		if (!elementoPertence(e)){   
+			if (this.tamanho == this.ultimo +1) {
+				//System.out.println("Conjunto Cheio!");
+			}else{
+				this.array[this.ultimo] = e;
+				this.ultimo++;
+			}
 		}else{
-			this.array[k] = e;	
+			//System.out.println("Elemento pertence ao conjunto!");
 		}
+		
 		
 	}
 
 	public boolean elementoPertence(int e){
-		for (int i = 0; i < this.tamanho; i++){
+		for (int i = 0; i < this.ultimo; i++){
 			if (array[i] == e)
 				return true;
 		}
@@ -47,8 +45,8 @@ class Conjunto{
 
 	public boolean conjuntoPertence(Conjunto c){
 		int teste = 0;
-		for (int i = 0; i < c.tamanho; i++) {
-			for (int j = 0; j < this.tamanho; j++) {
+		for (int i = 0; i < c.ultimo; i++) {
+			for (int j = 0; j < this.ultimo; j++) {
 				if (c.array[i] == this.array[j]) {
 					teste = 1;
 				}
@@ -74,16 +72,16 @@ class Conjunto{
 	public Conjunto interseccao(Conjunto A){
 		int[] vetorAux = new int[this.tamanho];
 		int nRepetidos = 0;
-		for (int i = 0; i < A.tamanho ;i++){
-			for (int j = 0; j<this.tamanho; j++){
+		for (int i = 0; i < A.ultimo ;i++){
+			for (int j = 0; j<this.ultimo; j++){
 				if(A.array[i] == this.array[j]){
 					vetorAux[i] = A.array[i];
 					++nRepetidos;
 				}
 			}
 		}
-		Conjunto intersec  = new Conjunto(this.tamanho - nRepetidos);
-		for (int i = 0; i<intersec.tamanho; ) {
+		Conjunto intersec  = new Conjunto(nRepetidos);
+		for (int i = 0; i<intersec.tamanho;i++ ) {
 			intersec.adicionar(vetorAux[i]);
 		}
 		return intersec;
@@ -91,6 +89,14 @@ class Conjunto{
 
 	//ainda não terminado
 	public Conjunto diference(Conjunto A){
+		for(int a = 0;a<A.tamanho;a++){
+			System.out.println(A.array[a]);
+		}
+
+		for(int b = 0;b<this.tamanho;b++){
+			System.out.println(this.array[b]);
+		}
+
 		Conjunto intersec = this.interseccao(A);
 
 		Conjunto dif = new Conjunto(this.tamanho - intersec.tamanho);
@@ -103,6 +109,7 @@ class Conjunto{
 				}
 			}
 			if(!teste){
+				System.out.println("elemento diferente:"+this.array[i]+"\n");
 				dif.adicionar(this.array[i]);
 			}
 		}
@@ -110,4 +117,3 @@ class Conjunto{
 	}
 
 }
-
