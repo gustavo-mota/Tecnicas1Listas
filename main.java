@@ -1,4 +1,7 @@
-/*Gustavo Antonio Sousa P.M 399611 */
+/*Gustavo Antonio Sousa P.M 399611 
+Feito com Franklyn Seabra: O Main foi feito por mim, e acrescestado edições dele
+tal como o Conjuntojava foi feito por ele e acrescentado edições por mim
+*/
 class Main{
 	public static void main(String args[]){
 		int k = 5,l = 0;
