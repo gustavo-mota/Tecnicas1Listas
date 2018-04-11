@@ -15,7 +15,7 @@ public class ContaXPTOExtreme extends Contas{
 	}
 	@Override
 	public float debitar(float valor){
-		this.saldo -= (valor*98)/100;
+		this.saldo -= ((valor) - (valor*0.2)/100);
 		return saldo;
 	}
 }
