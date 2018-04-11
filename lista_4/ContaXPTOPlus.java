@@ -6,7 +6,7 @@ public class ContaXPTOPlus extends Contas{
 	}
 
 	public String toString(){
-		return "\nTipo: Basic\nSaldo: R" + saldo + "\n Id: "+ id;
+		return "\nTipo: Plus\nSaldo: R" + saldo + "\n Id: "+ id;
 	}
 	@Override
 	public float creditar(float valor){
