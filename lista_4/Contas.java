@@ -1,9 +1,9 @@
-public abstract class Contas{ //abstract
+public abstract class Contas{
 	float saldo;
 	int id;
 	public Contas(int id){
 		this.id = id;
-		this.saldo = 0;
+		this.saldo = 0; //coerção básica
 	}
 
 	float consultarSaldo(){
