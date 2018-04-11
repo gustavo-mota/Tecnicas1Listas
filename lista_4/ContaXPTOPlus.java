@@ -10,7 +10,7 @@ public class ContaXPTOPlus extends Contas{
 	}
 	@Override
 	public float creditar(float valor){
-		this.saldo += (valor*5)/100 +valor;
+		this.saldo += (valor*0.5)/100 +valor;
 		return saldo;
 	}
 	@Override
