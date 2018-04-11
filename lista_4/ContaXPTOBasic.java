@@ -6,12 +6,12 @@ public class ContaXPTOBasic extends Contas{
 	}
 
 	public String toString(){
-		return "\nTipo: Basic\nSaldo: R" + saldo + "\n Id: "+ id;
+		return "\nTipo: " + Basic + "\nSaldo: R" + saldo + "\n Id: "+ id;
 	}
-	@Override
+	@Override 
 	public float creditar(float valor){
 		this.saldo += valor;
-		return saldo; //???
+		return saldo;
 	}
 	@Override
 	public float debitar(float valor){
