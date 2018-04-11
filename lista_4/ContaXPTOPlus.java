@@ -6,12 +6,12 @@ public class ContaXPTOPlus extends Contas{
 	}
 
 	public String toString(){
-		return "\nTipo: Plus\nSaldo: R" + saldo + "\n Id: "+ id;
+		return "\nTipo:" + tipo + "\nSaldo: R" + saldo + "\n Id: "+ id;
 	}
 	@Override
 	public float creditar(float valor){
 		this.saldo += (valor*5)/100 +valor;
-		return saldo; //???
+		return saldo;
 	}
 	@Override
 	public float debitar(float valor){
