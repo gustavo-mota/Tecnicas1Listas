@@ -1,6 +1,6 @@
 public class ContaXPTOPlus extends Contas{
 	String tipo;
-	ContaXPTOPlus(int id){
+	ContaXPTOPlus(int id){ //Inclusão
 		super(id);
 		this.tipo = "Plus";
 	}
