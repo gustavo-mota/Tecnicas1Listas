@@ -1,6 +1,6 @@
 public class ContaXPTOExtreme extends Contas{
 	String tipo;
-	ContaXPTOExtreme(int id){
+	ContaXPTOExtreme(int id){ //Inclusão
 		super(id);
 		this.tipo = "Extreme";
 	}
@@ -11,7 +11,7 @@ public class ContaXPTOExtreme extends Contas{
 	@Override
 	public float creditar(float valor){
 		this.saldo += (valor*2)/100 +valor;
-		return saldo; //???
+		return saldo;
 	}
 	@Override
 	public float debitar(float valor){
