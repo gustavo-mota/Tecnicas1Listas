@@ -4,6 +4,9 @@ class Multiplicar extends Conta{
 		this.direita = direita;
 	}
 	double calcular(){
-		return esquerda.calcular() * direita.calcular();
+		double valor = esquerda.calcular() * direita.calcular();
+		ObservadorPositivo.update(valor);
+		ObservadorNegativo.update(valor);
+		return valor;
 	}
 }

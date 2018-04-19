@@ -4,6 +4,9 @@ class Seno extends ExpressionTrigo{
 		super(expressionTrigo);
 	}
 	double calcular(){
-		return Math.sin(Math.toRadians(expressionTrigo.calcular()));
+		double valor = Math.sin(Math.toRadians(expressionTrigo.calcular()));
+		ObservadorPositivo.update(valor);
+		ObservadorNegativo.update(valor);
+		return valor;
 	}
 }

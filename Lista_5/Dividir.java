@@ -4,8 +4,11 @@ class Dividir extends Conta{
 		this.direita = direita;
 	}
 	double calcular(){
+		double valor = 0;
 		if(direita.calcular() != 0)
-			return esquerda.calcular() / direita.calcular();
-		return 0;
+			valor = esquerda.calcular() / direita.calcular();
+		ObservadorPositivo.update(valor);
+		ObservadorNegativo.update(valor);
+		return valor;
 	}
 }
